@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.PROD 
-  ? import.meta.env.VITE_API_URL || 'https://your-api-name.onrender.com'
-  : 'http://127.0.0.1:8000';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 
+  (import.meta.env.PROD 
+    ? 'https://tour-guide-api.onrender.com'
+    : 'http://127.0.0.1:8000');
 
 const api = axios.create({
   baseURL: API_BASE_URL,

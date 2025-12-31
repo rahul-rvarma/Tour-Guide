@@ -77,9 +77,10 @@ const Destinations = () => {
                 {destination.image_filename && (
                   <div className="h-48 overflow-hidden">
                     <img 
-                      src={`${import.meta.env.PROD 
-                        ? import.meta.env.VITE_API_URL || 'https://your-api-name.onrender.com'
-                        : 'http://127.0.0.1:8000'
+                      src={`${import.meta.env.VITE_API_URL || 
+                        (import.meta.env.PROD 
+                          ? 'https://tour-guide-api.onrender.com'
+                          : 'http://127.0.0.1:8000')
                       }/uploads/${destination.image_filename}`} 
                       alt={destination.name}
                       className="w-full h-full object-cover"
