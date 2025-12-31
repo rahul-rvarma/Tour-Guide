@@ -10,10 +10,14 @@ services:
     envVars:
       - key: SECRET_KEY
         generateValue: true
+      - key: JWT_SECRET
+        generateValue: true
       - key: ALGORITHM
         value: HS256
       - key: ENVIRONMENT
         value: production
+      - key: MONGODB_URI
+        value: mongodb+srv://22f1000756_db_user:kclPpEOrqdqqLyjc@cluster0.iq1mbvr.mongodb.net/tourguide?appName=Cluster0
   
   # Frontend (Static Site)
   - type: web
