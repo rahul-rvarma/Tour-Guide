@@ -16,12 +16,10 @@ services:
         value: production
   
   # Frontend (Static Site)
-  - type: web
+  - type: static
     name: tour-guide-frontend
-    env: static
-    plan: starter
     buildCommand: "cd tour-guide && npm install && npm run build"
-    staticPublishPath: tour-guide/dist
+    publishPath: tour-guide/dist
     envVars:
       - key: VITE_API_URL
         fromService:
