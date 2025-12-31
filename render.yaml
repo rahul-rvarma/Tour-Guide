@@ -19,7 +19,7 @@ services:
   - type: web
     name: tour-guide-frontend
     env: static
-    plan: free
+    plan: starter
     buildCommand: "cd tour-guide && npm install && npm run build"
     staticPublishPath: tour-guide/dist
     envVars:
