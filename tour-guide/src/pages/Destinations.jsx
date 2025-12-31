@@ -77,7 +77,10 @@ const Destinations = () => {
                 {destination.image_filename && (
                   <div className="h-48 overflow-hidden">
                     <img 
-                      src={`http://127.0.0.1:8000/uploads/${destination.image_filename}`} 
+                      src={`${import.meta.env.PROD 
+                        ? import.meta.env.VITE_API_URL || 'https://your-api-name.onrender.com'
+                        : 'http://127.0.0.1:8000'
+                      }/uploads/${destination.image_filename}`} 
                       alt={destination.name}
                       className="w-full h-full object-cover"
                       onError={(e) => {
